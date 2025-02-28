@@ -1,0 +1,42 @@
+import JobsPage from "@/components/jobsPage";
+import { API_URL } from "@/constants";
+import { useGetJobs } from "@/hooks/getJobs";
+import { JobsType } from "@/types";
+import { GetServerSideProps, NextPage } from "next";
+
+interface JobT {
+  initialData: JobsType;
+}
+
+const Jobs: NextPage<JobT> = ({ initialData }) => {
+  const { data, error, isLoading } = useGetJobs({}, initialData);
+
+  return <JobsPage data={data} error={error} isLoading={isLoading} />;
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const res = await fetch(`${API_URL}/jobs`);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const initialData = await res.json();
+
+    return {
+      props: {
+        initialData,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+
+    return {
+      props: {
+        initalData: [],
+      },
+    };
+  }
+};
+
+export default Jobs;

@@ -5,7 +5,7 @@ import { JobsType } from "@/types";
 import { GetServerSideProps, NextPage } from "next";
 
 interface JobT {
-  initialData: JobsType;
+  initialData: JobsType[];
 }
 
 const Jobs: NextPage<JobT> = ({ initialData }) => {

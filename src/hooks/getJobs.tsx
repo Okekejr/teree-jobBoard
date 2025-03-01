@@ -6,7 +6,7 @@ const fetchJobs = async ({
   queryKey,
 }: {
   queryKey: [string, { company?: string; title?: string; location?: string }];
-}): Promise<JobsType> => {
+}): Promise<JobsType[]> => {
   const [, filters] = queryKey;
 
   // Convert filters into query parameters
@@ -22,7 +22,7 @@ const fetchJobs = async ({
 
 export const useGetJobs = (
   filters: { company?: string; title?: string; location?: string } = {},
-  initialData?: JobsType
+  initialData?: JobsType[]
 ) => {
   return useQuery({
     queryKey: ["jobs", filters],

@@ -8,7 +8,18 @@ export const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  styles: {
+    global: {
+      body: {
+        bg: "myCustomColor",
+        color: '#fff'
+      },
+    },
+  },
   fonts,
+  colors: {
+    myCustomColor: "#020303",
+  },
   sizes: {
     container: {
       xl: "1448px",

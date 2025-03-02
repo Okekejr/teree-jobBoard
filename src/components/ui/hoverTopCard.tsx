@@ -21,14 +21,13 @@ export const HoverTopCard: FC<CardProps> = ({
     <Box
       w="fit-content"
       h="40px"
-      bg="#131313"
+      bg="#000"
       color="white"
       borderRadius="15px"
       display="flex"
       alignItems="center"
       gap="7px"
       px="10px"
-      _hover={{ cursor: "pointer" }}
     >
       <motion.div
         initial={{ width: "auto", opacity: 1 }}

@@ -1,11 +1,12 @@
-import { Flex, Link, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { FC, useState } from "react";
 import { HoverTopCard } from "./hoverTopCard";
 import { ArrowRight, BriefcaseBusiness } from "lucide-react";
 import { JobsType } from "@/types";
+import { useRouter } from "next/router";
 
-const Card_Bg = "#FD3CFE";
-const Card_Color = "#FC72FF";
+const Card_Bg = "whiteAlpha.100";
+const Card_Color = "#fff";
 
 interface JobCardT {
   data: JobsType;
@@ -14,10 +15,16 @@ interface JobCardT {
 export const JobCard: FC<JobCardT> = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/job/${data.id}`);
+  };
+
   return (
     <Flex
       flexDirection="column"
-      width={{ base: "282px", md: "516px" }}
+      width={{ base: "282px", md: "486px" }}
       height={{ base: "240px", md: "250px" }}
       backgroundColor={Card_Bg}
       borderRadius="15px"
@@ -26,6 +33,8 @@ export const JobCard: FC<JobCardT> = ({ data }) => {
       gap={{ base: 4, md: 0 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
+      _hover={{ cursor: "pointer" }}
     >
       <HoverTopCard
         leftIcon={<BriefcaseBusiness size={18} color={Card_Color} />}

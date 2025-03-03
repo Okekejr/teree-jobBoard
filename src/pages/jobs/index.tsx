@@ -1,4 +1,4 @@
-import JobsPage from "@/components/jobsPage";
+import JobsPage from "@/components/_pages/jobsPage";
 import { API_URL } from "@/constants";
 import { useGetJobs } from "@/hooks/getJobs";
 import { JobsType } from "@/types";

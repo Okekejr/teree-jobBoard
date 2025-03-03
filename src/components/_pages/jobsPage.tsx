@@ -1,9 +1,9 @@
 import { JobsType } from "@/types";
 import { Box, Button, Divider, Heading, Spinner, Text } from "@chakra-ui/react";
 import { FC, useState } from "react";
-import { JobCard } from "./ui/jobCard";
-import { CustomText } from "./ui/customText";
-import { ListGrid } from "./ui/ListGrid";
+import { JobCard } from "../ui/jobCard";
+import { CustomText } from "../ui/customText";
+import { ListGrid } from "../ui/ListGrid";
 
 interface JobsPageType {
   data: JobsType[] | undefined;

@@ -34,7 +34,8 @@ export const JobCard: FC<JobCardT> = ({ data }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
-      _hover={{ cursor: "pointer" }}
+      opacity={0.9}
+      _hover={{ cursor: "pointer", opacity: 1 }}
     >
       <HoverTopCard
         leftIcon={<BriefcaseBusiness size={18} color={Card_Color} />}

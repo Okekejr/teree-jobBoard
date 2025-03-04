@@ -1,5 +1,5 @@
 import { JobsType } from "@/types";
-import { Box, Button, Divider, Heading, Spinner, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Spinner, Text } from "@chakra-ui/react";
 import { FC, useState } from "react";
 import { JobCard } from "../ui/jobCard";
 import { CustomText } from "../ui/customText";
@@ -34,14 +34,14 @@ const JobsPage: FC<JobsPageType> = ({ data, error, isLoading }) => {
         <Box display="flex" justifyContent="center" mt={{ base: 4, md: 12 }}>
           {visibleJobs < (data?.length || 0) ? (
             <Button
-              borderRadius="15px"
+              borderRadius="full"
               _hover={{ bgColor: "#FBD38D", color: "#000" }}
               onClick={() => setVisibleJobs((prev) => prev + 2)}
             >
               <Text fontFamily="lighter">Load more</Text>
             </Button>
           ) : (
-            <Divider mt={8} width={{ base: "10rem", md: "20rem" }} />
+            ""
           )}
         </Box>
       </Box>

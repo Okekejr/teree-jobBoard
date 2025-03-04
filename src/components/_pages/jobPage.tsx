@@ -1,14 +1,17 @@
 import { JobsType } from "@/types";
 import {
   Box,
+  Button,
   Flex,
   Heading,
+  Link,
   ListItem,
   Stack,
   UnorderedList,
 } from "@chakra-ui/react";
 import { FC } from "react";
 import { CustomText } from "../ui/customText";
+import { JobSection } from "../ui/jobSection";
 
 interface JobPageType {
   data: JobsType | undefined;
@@ -20,38 +23,31 @@ const JobPage: FC<JobPageType> = ({ data }) => {
 
   return (
     <Box display="flex" flexDirection="column" px={4} gap={8}>
-      <Flex alignItems="flex-end" gap="5px">
-        <Heading>{data?.title}</Heading>
-        <Box pb="3px">
-          <CustomText fontSize="20px"> @ {data?.company}</CustomText>
-        </Box>
+      <Flex justifyContent="space-between" alignContent="center">
+        <Flex alignItems="flex-end" gap="5px">
+          <Heading>{data?.title}</Heading>
+          <Box pb="3px">
+            <CustomText fontSize="20px"> @ {data?.company}</CustomText>
+          </Box>
+        </Flex>
+        <Button
+          as={Link}
+          borderRadius="full"
+          width="100px"
+          color="#000"
+          _hover={{ bgColor: "#FBD38D", color: "#000", textDecoration: "none" }}
+          href={data?.link}
+          isExternal
+        >
+          <CustomText fontFamily="lighter">Apply</CustomText>
+        </Button>
       </Flex>
 
       <Box display="flex" justifyContent="center" flexDirection="column">
         <Stack gap={8}>
-          <Stack direction="column" gap="5px">
-            <CustomText
-              fontSize={{ base: "md", md: "lg" }}
-              fontFamily="heading"
-              fontWeight="bold"
-            >
-              Location:
-            </CustomText>
+          <JobSection title="Location" data={data?.location} />
 
-            <CustomText>{data?.location}</CustomText>
-          </Stack>
-
-          <Stack direction="column" gap="5px">
-            <CustomText
-              fontSize={{ base: "md", md: "lg" }}
-              fontFamily="heading"
-              fontWeight="bold"
-            >
-              Description:
-            </CustomText>
-
-            <CustomText>{data?.description}</CustomText>
-          </Stack>
+          <JobSection title="About" data={data?.description} />
 
           <Stack direction="column" gap="10px">
             <CustomText

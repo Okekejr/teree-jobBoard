@@ -3,15 +3,29 @@ import { API_URL } from "@/constants";
 import { useGetJobs } from "@/hooks/getJobs";
 import { JobsType } from "@/types";
 import { GetServerSideProps, NextPage } from "next";
+import { useState } from "react";
 
 interface JobT {
   initialData: JobsType[];
 }
 
 const Jobs: NextPage<JobT> = ({ initialData }) => {
-  const { data, error, isLoading } = useGetJobs({}, initialData);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  return <JobsPage data={data} error={error} isLoading={isLoading} />;
+  const { data, error, isLoading } = useGetJobs(
+    { title: searchQuery, company: searchQuery, location: searchQuery },
+    initialData
+  );
+
+  return (
+    <JobsPage
+      data={data}
+      error={error}
+      isLoading={isLoading}
+      searchQuery={searchQuery}
+      setSearchQuery={setSearchQuery}
+    />
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
@@ -33,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
     return {
       props: {
-        initalData: [],
+        initialData: [],
       },
     };
   }

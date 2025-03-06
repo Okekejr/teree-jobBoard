@@ -1,5 +1,5 @@
 import { JobsType } from "@/types";
-import { Box, Button, Heading, Spinner, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { FC, useState } from "react";
 import { JobCard } from "../ui/jobCard";
 import { CustomText } from "../ui/customText";
@@ -17,8 +17,21 @@ const JobsPage: FC<JobsPageType> = ({ data, error, isLoading }) => {
   const displayedJobs = data?.slice(0, visibleJobs) || [];
 
   return (
-    <Box display="flex" flexDirection="column" px={4}>
-      <Heading>Jobs Page</Heading>
+    <Box display="flex" flexDirection="column" px={4} py={8} mx="auto">
+      <Box textAlign="center" mb={6}>
+        <Heading fontSize="3xl" fontWeight="bold" color="white">
+          Explore Web3 & Crypto Jobs 🚀
+        </Heading>
+        <Text fontSize="lg" color="gray.400" mt={2}>
+          Find your next role at top blockchain companies across the Americas.
+        </Text>
+      </Box>
+
+      <Flex justify="space-between" align="center" mb={4} color="gray.300">
+        <Text fontSize="md">
+          {data?.length ? `${data.length} jobs available` : "No jobs available"}
+        </Text>
+      </Flex>
 
       <Box display="flex" justifyContent="center" flexDirection="column">
         {isLoading && <Spinner size="xl" color="#c7c7c7" />}
@@ -31,19 +44,19 @@ const JobsPage: FC<JobsPageType> = ({ data, error, isLoading }) => {
             : !isLoading && <CustomText>No Jobs available</CustomText>}
         </ListGrid>
 
-        <Box display="flex" justifyContent="center" mt={{ base: 4, md: 12 }}>
+        <Flex justify="center" mt={{ base: 6, md: 12 }}>
           {visibleJobs < (data?.length || 0) ? (
             <Button
               borderRadius="full"
               _hover={{ bgColor: "#FBD38D", color: "#000" }}
               onClick={() => setVisibleJobs((prev) => prev + 2)}
             >
-              <Text fontFamily="lighter">Load more</Text>
+              <Text fontFamily="lighter">Load more jobs</Text>
             </Button>
           ) : (
             ""
           )}
-        </Box>
+        </Flex>
       </Box>
     </Box>
   );

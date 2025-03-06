@@ -45,9 +45,9 @@ const JobPage: FC<JobPageType> = ({ data }) => {
 
       <Box display="flex" justifyContent="center" flexDirection="column">
         <Stack gap={8}>
-          <JobSection title="Location" data={data?.location} />
+          <JobSection title="🌍 Location" data={data?.location} />
 
-          <JobSection title="About" data={data?.description} />
+          <JobSection title="📌 Job Description" data={data?.description} />
 
           <Stack direction="column" gap="10px">
             <CustomText
@@ -55,7 +55,7 @@ const JobPage: FC<JobPageType> = ({ data }) => {
               fontFamily="heading"
               fontWeight="bold"
             >
-              Qualification, Requirements & Skills:
+               ✅ Skills & Qualifications:
             </CustomText>
 
             <Flex
@@ -112,7 +112,7 @@ const JobPage: FC<JobPageType> = ({ data }) => {
                     );
                   })
                 ) : (
-                  <CustomText>.... none found.</CustomText>
+                  <CustomText>No skills found.</CustomText>
                 )}
               </Box>
             </Flex>

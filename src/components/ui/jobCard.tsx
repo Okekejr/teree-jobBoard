@@ -3,7 +3,6 @@ import { FC, useState } from "react";
 import { HoverTopCard } from "./hoverTopCard";
 import { ArrowRight, BriefcaseBusiness } from "lucide-react";
 import { JobsType } from "@/types";
-import { useRouter } from "next/router";
 
 const Card_Bg = "whiteAlpha.100";
 const Card_Color = "#fff";
@@ -15,10 +14,8 @@ interface JobCardT {
 export const JobCard: FC<JobCardT> = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const router = useRouter();
-
   const handleClick = () => {
-    router.push(`/job/${data.id}`);
+    window.open(`/job/${data.id}`, "_blank");
   };
 
   return (
@@ -44,6 +41,8 @@ export const JobCard: FC<JobCardT> = ({ data }) => {
         isHovered={isHovered}
         color={Card_Color}
       />
+
+      <Text fontFamily="lighter">• {data.location}</Text>
 
       <Text
         fontFamily="texts"

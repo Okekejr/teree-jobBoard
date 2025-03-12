@@ -1,9 +1,10 @@
 import { useMounted } from "@/hooks/mounted";
-import { Flex, Heading, useDisclosure } from "@chakra-ui/react";
+import { Button, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import { NavLinks } from "./navLinks";
 import { MobileToggle } from "./mobileToggle";
 import { MobileDrawer } from "./mobileDrawer";
 import Link from "next/link";
+import { CustomText } from "../ui/customText";
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -54,7 +55,22 @@ export const Navbar = () => {
         />
 
         <Flex justifyContent="flex-end" flex="1 1">
-          <Flex gap={4}></Flex>
+          <Button
+            alignItems="center"
+            borderRadius="1.25rem"
+            height="2.5rem"
+            padding="0 1.5rem"
+            display="flex"
+            gap="6px"
+            w="fit-content"
+            mx="10px"
+            _hover={{
+              backgroundColor: "#9b9b9b",
+              color: "#fff",
+            }}
+          >
+            <CustomText fontFamily="lighter">Login</CustomText>
+          </Button>
         </Flex>
 
         <MobileToggle

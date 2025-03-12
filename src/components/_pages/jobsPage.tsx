@@ -109,7 +109,7 @@ const JobsPage: FC<JobsPageType> = ({
           <Text fontSize="md">
             {filteredJobs.length
               ? `${filteredJobs.length} jobs found`
-              : "No jobs available"}
+              : ""}
           </Text>
         </motion.div>
       </Flex>

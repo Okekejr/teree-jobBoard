@@ -13,6 +13,7 @@ export const PageContainer = ({ children }: PropsStack) => {
         <VStack>
           <Navbar />
         </VStack>
+        <Box height="13vh" maxH="260px" />
         {children}
       </Container>
     </Box>

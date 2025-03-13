@@ -4,7 +4,11 @@ import { useRouter } from "next/router";
 import { routes } from "@/utils/routes";
 import Link from "next/link";
 
-interface NavLinksProps extends FlexProps {
+interface NavLinksProps
+  extends Pick<
+    FlexProps,
+    "display" | "borderRadius" | "height" | "padding" | "mx" | "gap"
+  > {
   onClose: () => void;
 }
 

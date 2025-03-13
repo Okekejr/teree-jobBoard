@@ -3,7 +3,8 @@ import { Box, Flex, FlexProps, List, ListItem } from "@chakra-ui/react";
 import { routes } from "@/utils/routes";
 import Link from "next/link";
 
-interface NavLinksProps extends FlexProps {
+interface NavLinksProps
+  extends Pick<FlexProps, "direction" | "alignItems" | "mt"> {
   onClose: () => void;
 }
 

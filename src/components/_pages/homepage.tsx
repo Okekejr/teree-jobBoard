@@ -10,7 +10,7 @@ import { calculateSizes } from "@/utils";
 import Cube from "../3dElements/cube";
 import { PerspectiveCamera } from "@react-three/drei";
 
-const MotionHeading = motion(Heading);
+const MotionHeading = motion.create(Heading);
 
 const Homepage = () => {
   const heroRef = useRef(null);

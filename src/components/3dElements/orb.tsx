@@ -2,6 +2,10 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 // Forward ref to handle external access to the ref
 const Orb = forwardRef((props, ref) => {
@@ -10,7 +14,7 @@ const Orb = forwardRef((props, ref) => {
   const orbRef = useRef<THREE.Group>(null); // Reference for rotation
 
   // Set the ref to the orb's group element
-  useImperativeHandle(ref, () => orbRef.current);
+  useImperativeHandle(ref, () => orbRef.current, [orbRef.current]);
 
   // Rotate the orb continuously
   useFrame(() => {
@@ -19,9 +23,25 @@ const Orb = forwardRef((props, ref) => {
     }
   });
 
+  useGSAP(() => {
+    if (!orbRef.current) return;
+
+    console.log("GSAP triggered", orbRef.current);
+
+    gsap.to(orbRef.current?.scale, {
+      x: 0.09,
+      y: 0.09,
+      z: 0.09,
+      scrollTrigger: {
+        trigger: ".career",
+        scrub: true,
+      },
+    });
+  }, [orbRef.current]);
+
   return (
     <group ref={orbRef} {...props} dispose={null}>
-      <group scale={0.001}>
+      <group scale={0.05}>
         <mesh
           castShadow
           receiveShadow

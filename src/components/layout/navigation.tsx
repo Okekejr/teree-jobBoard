@@ -15,7 +15,6 @@ export const Navbar = () => {
       py={{ base: 3, md: 2 }}
       zIndex="sticky"
       left="0"
-      position="fixed"
       top="0"
       w="100%"
       justify="center"

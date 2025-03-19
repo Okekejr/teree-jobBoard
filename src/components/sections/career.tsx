@@ -4,7 +4,8 @@ import { CustomButton } from "../ui/customButton";
 export const CareerSection = () => {
   return (
     <Box
-      id="career-section"
+      id="career"
+      className="career"
       display="flex"
       flexDirection="column"
       justifyContent="center"

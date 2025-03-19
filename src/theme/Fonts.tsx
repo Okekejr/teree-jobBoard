@@ -48,15 +48,6 @@ export const FontFaces = () => (
         src: url('/assets/fonts/NeueHaasDisplay-Light.woff2') format('woff2'),
             url('/assets/fonts/NeueHaasDisplay-Light.woff') format('woff');
       }
-
-      @font-face {
-        font-family: 'Neue Haas Grotesk';
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url('/assets/fonts/NeueHaasDisplay-Medium.woff2') format('woff2'),
-            url('/assets/fonts/NeueHaasDisplay-Medium.woff') format('woff');
-      }
     `}
   />
 );

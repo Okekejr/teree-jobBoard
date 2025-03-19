@@ -2,12 +2,12 @@ import { Global } from "@emotion/react";
 
 export const fonts = {
   heading:
-    "'IBM Plex Sans Medium', 'Helvetica Neue', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'",
+    "'HostGrotesk Light', 'Helvetica Neue', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'",
   texts:
-    "'HostGrotesk Light', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Roboto', 'sans-serif'",
+    "'IBM Plex Sans Medium', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Roboto', 'sans-serif'",
   lighter:
     "'IBM Plex Sans Light', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Roboto', 'sans-serif'",
-  body: "'Neue Haas Grotesk', 'Neue Haas Grotesk', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif",
+  body: "'GT Flexa Mono Beta v5 Regular', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif",
 };
 
 export const FontFaces = () => (
@@ -47,6 +47,12 @@ export const FontFaces = () => (
         font-display: swap;
         src: url('/assets/fonts/NeueHaasDisplay-Light.woff2') format('woff2'),
             url('/assets/fonts/NeueHaasDisplay-Light.woff') format('woff');
+      }
+
+      @font-face {
+        font-family: "GT Flexa Mono Beta v5 Regular";
+        src: url("https://db.onlinewebfonts.com/t/8dd8a40826ffb9145e5a6bf11c881466.woff2")format("woff2"),
+             url("https://db.onlinewebfonts.com/t/8dd8a40826ffb9145e5a6bf11c881466.woff")format("woff"),
       }
     `}
   />

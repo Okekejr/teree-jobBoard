@@ -24,28 +24,42 @@ interface CustomButtonProps
 
 export const CustomButton: FC<CustomButtonProps> = ({ text, ...props }) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 120, damping: 12 }}
-    >
+    <motion.div>
       <Button
-        borderRadius="1.25rem"
-        height="2.5rem"
-        px="1.5rem"
+        borderRadius="none"
         display="flex"
         alignItems="center"
         justifyContent="center"
         gap="6px"
-        w="fit-content"
-        mx="10px"
+        px={8}
+        size="lg"
+        position="relative"
+        overflow="hidden"
+        _before={{
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: "0",
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#0000A3",
+          transform: "scaleX(0)",
+          transformOrigin: "left",
+          transition: "transform 0.3s ease-in-out",
+          zIndex: 1,
+        }}
         _hover={{
-          backgroundColor: "#9b9b9b",
           color: "#fff",
+          _before: {
+            transform: "scaleX(1)",
+            transformOrigin: "left",
+          },
         }}
         {...props}
       >
-        <CustomText fontFamily="lighter">{text}</CustomText>
+        <CustomText zIndex={2} fontFamily="texts">
+          {text}
+        </CustomText>
       </Button>
     </motion.div>
   );

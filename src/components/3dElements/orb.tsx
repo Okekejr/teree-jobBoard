@@ -29,18 +29,23 @@ const Orb = forwardRef((props, ref) => {
     console.log("GSAP triggered", orbRef.current);
 
     gsap.to(orbRef.current?.scale, {
-      x: 0.09,
-      y: 0.09,
-      z: 0.09,
+      x: 1.3,
+      y: 1.3,
+      z: 1.3,
+      duration: 1.2, // Smooth transition
+      ease: "power2.out",
       scrollTrigger: {
-        trigger: ".career",
-        scrub: true,
+        trigger: ".about",
+        start: "top center",
+        toggleActions: "play reverse play reverse",
       },
     });
   }, [orbRef.current]);
 
+  console.log(orbRef.current?.position, orbRef.current?.scale);
+
   return (
-    <group ref={orbRef} {...props} dispose={null}>
+    <group ref={orbRef} position={[11.5, -3.3, 2.5]} {...props} dispose={null}>
       <group scale={0.05}>
         <mesh
           castShadow

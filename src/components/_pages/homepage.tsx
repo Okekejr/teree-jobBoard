@@ -1,13 +1,14 @@
 import { Box } from "@chakra-ui/react";
-import { CareerSection } from "../sections/career";
+import { AboutSection } from "../sections/about";
 import { Hero } from "../sections/hero";
 
 const Homepage = () => {
   return (
-    <>
+    <Box>
       <Hero />
-      <CareerSection />
-    </>
+      <AboutSection />
+      <Hero />
+    </Box>
   );
 };
 

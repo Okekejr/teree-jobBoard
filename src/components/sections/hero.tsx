@@ -39,10 +39,8 @@ export const Hero = () => {
         position="relative"
         w="100%"
         maxW="1200px"
-        mx="auto"
-        px={{ base: 6, md: 12 }}
       >
-        <Flex w="100%" mx="auto">
+        <Flex w="100%">
           {/* Heading */}
           <MotionHeading
             fontSize={{ base: "3xl", md: "4.5rem" }}
@@ -58,9 +56,10 @@ export const Hero = () => {
 
           <MotionBox
             mt="auto"
-            px={2}
-            py={2}
+            p={4}
+            bgColor="transparent"
             width="35rem"
+            textAlign={{ base: "center", md: "left" }}
             border="1px solid"
             borderColor="#c7c7c7"
             initial={{ opacity: 0, x: 50 }}
@@ -68,8 +67,8 @@ export const Hero = () => {
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           >
             <MotionText
-              fontFamily="texts"
-              fontSize={{ base: "md", md: "xl" }}
+              fontFamily="body"
+              fontSize={{ base: "md", md: "1.1rem" }}
               color="gray.400"
             >
               Explore top Web3 jobs and grow your blockchain career today.
@@ -84,11 +83,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
         >
-          <CustomButton
-            text="Get Started"
-            colorScheme="blue"
-            borderRadius="full"
-          />
+          <CustomButton text="Get Started" colorScheme="blue" />
         </MotionBox>
       </Flex>
     </Box>

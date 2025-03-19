@@ -4,7 +4,13 @@ import { FC } from "react";
 interface Props
   extends Pick<
     TextProps,
-    "color" | "fontWeight" | "textAlign" | "fontSize" | "fontFamily"
+    | "color"
+    | "fontWeight"
+    | "textAlign"
+    | "fontSize"
+    | "fontFamily"
+    | "lineHeight"
+    | "zIndex"
   > {
   children: string | React.ReactNode;
   className?: string;

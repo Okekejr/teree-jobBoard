@@ -13,7 +13,6 @@ export const Navbar = () => {
   return hasMounted ? (
     <Flex
       py={{ base: 3, md: 2 }}
-      zIndex="sticky"
       left="0"
       top="0"
       w="100%"
@@ -54,11 +53,7 @@ export const Navbar = () => {
         />
 
         <Flex justifyContent="flex-end" flex="1 1">
-          <CustomButton
-            text="Get Started"
-            colorScheme="blue"
-            borderRadius="full"
-          />
+          <CustomButton text="Get Started" colorScheme="blue" />
         </Flex>
 
         <MobileToggle

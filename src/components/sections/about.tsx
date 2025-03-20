@@ -1,33 +1,29 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { CustomButton } from "../ui/customButton";
 import { CustomText } from "../ui/customText";
-import { motion } from "framer-motion";
+import { AnimatedBoxButton } from "../ui/animatedBox";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { AnimatedHeading } from "../ui/animatedHeading";
 
 export const AboutSection = () => {
-  const MotionBox = motion.create(Box);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
   return (
     <Box
+      ref={ref}
       id="about"
       className="about"
       display="flex"
       flexDirection="column"
       justifyContent="center"
       w="fit-content"
-      px={{ base: 6, md: 12 }}
+      h="85vh"
       gap={6}
       zIndex={1}
     >
-      <Heading
-        color="white"
-        bg="#1a1d2b"
-        fontSize={{ base: "2xl", md: "2.7rem" }}
-        p="10px"
-        mb={4}
-        w="fit-content"
-      >
-        Advance Your Web3 Career
-      </Heading>
+      <AnimatedHeading isInView={isInView} text="Empowering Your Web3 Career" />
 
       <Flex flexDirection="column">
         <Box
@@ -41,17 +37,19 @@ export const AboutSection = () => {
           borderColor="#c7c7c7"
         >
           <CustomText fontFamily="body">
-            We are a passionate team dedicated to connecting talented
-            professionals with exciting opportunities in the Web3 and blockchain
-            space. Our mission is to simplify the job search process for both
-            job seekers and companies by curating a platform where top Web3
-            companies can find the right talent to push innovation forward.
+            TreeJobs aggregates the best Web3 job listings from innovative
+            companies across the globe. We focus on providing roles in growing
+            projects that are shaping the future of blockchain, offering you a
+            chance to work with cutting-edge technology and contribute to the
+            decentralized revolution. Whether you’re looking to break into Web3
+            or take the next step in your career, we’re here to help you make
+            that connection.
           </CustomText>
         </Box>
 
-        <Box w="fit-content">
-          <CustomButton text="Explore Jobs" colorScheme="blue" />
-        </Box>
+        <AnimatedBoxButton>
+          <CustomButton text="Explore Jobs" />
+        </AnimatedBoxButton>
       </Flex>
     </Box>
   );

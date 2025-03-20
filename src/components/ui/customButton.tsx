@@ -24,12 +24,14 @@ interface CustomButtonProps
 
 export const CustomButton: FC<CustomButtonProps> = ({ text, ...props }) => {
   return (
-    <motion.div>
+    <motion.div style={{ width: "fit-content" }}>
       <Button
         borderRadius="none"
         display="flex"
         alignItems="center"
         justifyContent="center"
+        bgColor="#fff"
+        color="#000"
         gap="6px"
         px={8}
         size="lg"

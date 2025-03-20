@@ -1,6 +1,11 @@
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -15,6 +20,12 @@ const Orb = forwardRef((props, ref) => {
 
   // Set the ref to the orb's group element
   useImperativeHandle(ref, () => orbRef.current, [orbRef.current]);
+
+  useEffect(() => {
+    if (orbRef.current) {
+      orbRef.current.position.set(11.5, -3.3, 2.5); // Position on the right when page loads
+    }
+  }, []);
 
   // Rotate the orb continuously
   useFrame(() => {
@@ -32,12 +43,27 @@ const Orb = forwardRef((props, ref) => {
       x: 1.3,
       y: 1.3,
       z: 1.3,
-      duration: 1.2, // Smooth transition
+      duration: 1.2,
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".about",
         start: "top center",
         toggleActions: "play reverse play reverse",
+        invalidateOnRefresh: true,
+      },
+    });
+
+    gsap.to(orbRef.current.position, {
+      x: -11.5,
+      y: -8.1,
+      z: 2.5,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".why",
+        start: "top center",
+        toggleActions: "play reverse play reverse",
+        invalidateOnRefresh: true,
       },
     });
   }, [orbRef.current]);
@@ -45,7 +71,7 @@ const Orb = forwardRef((props, ref) => {
   console.log(orbRef.current?.position, orbRef.current?.scale);
 
   return (
-    <group ref={orbRef} position={[11.5, -3.3, 2.5]} {...props} dispose={null}>
+    <group ref={orbRef} {...props} dispose={null}>
       <group scale={0.05}>
         <mesh
           castShadow

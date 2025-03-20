@@ -20,43 +20,43 @@ interface PropsStack {
 export const PageContainer = ({ children }: PropsStack) => {
   const orbRef = useRef<THREE.Group>(null);
 
-  // const x = useControls("Terminal", {
-  //   positionX: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionY: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionZ: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationX: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationY: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationZ: {
-  //     value: 0,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   scale: {
-  //     value: 1,
-  //     min: 1,
-  //     max: 100,
-  //   },
-  // });
+  const x = useControls("Terminal", {
+    positionX: {
+      value: 2.5,
+      min: -10,
+      max: 10,
+    },
+    positionY: {
+      value: 2.5,
+      min: -10,
+      max: 10,
+    },
+    positionZ: {
+      value: 2.5,
+      min: -10,
+      max: 10,
+    },
+    rotationX: {
+      value: 0,
+      min: -10,
+      max: 10,
+    },
+    rotationY: {
+      value: 0,
+      min: -10,
+      max: 10,
+    },
+    rotationZ: {
+      value: 0,
+      min: -10,
+      max: 10,
+    },
+    scale: {
+      value: 1,
+      min: 1,
+      max: 100,
+    },
+  });
 
   return (
     <Box minH="100vh" w="100%">

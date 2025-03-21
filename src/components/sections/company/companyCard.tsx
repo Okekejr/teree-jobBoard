@@ -28,7 +28,6 @@ export const CompanyCard = ({
       justifyContent="space-between"
       p={4}
     >
-      {/* Animated Number */}
       <motion.div
         initial={{ x: -40, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : {}}
@@ -66,27 +65,25 @@ export const CompanyCard = ({
       </motion.div>
 
       <Flex flexDirection="column" gap={4}>
+        <motion.div
+          initial={{ x: 40, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+        >
+          <Box fontSize="lg" fontWeight="bold" color="white" w="100%">
+            {name}
+          </Box>
+        </motion.div>
 
-      <motion.div
-        initial={{ x: 40, opacity: 0 }}
-        animate={isInView ? { x: 0, opacity: 1 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-      >
-        <Box fontSize="lg" fontWeight="bold" color="white" w="100%">
-          {name}
-        </Box>
-      </motion.div>
-
-      {/* Description */}
-      <motion.div
-        initial={{ x: 40, opacity: 0 }}
-        animate={isInView ? { x: 0, opacity: 1 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-      >
-        <Box fontSize="sm" color="gray.300" w="100%">
-          {desc}
-        </Box>
-      </motion.div>
+        <motion.div
+          initial={{ x: 40, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+        >
+          <Box fontSize="sm" color="gray.300" w="100%">
+            {desc}
+          </Box>
+        </motion.div>
       </Flex>
     </Box>
   );

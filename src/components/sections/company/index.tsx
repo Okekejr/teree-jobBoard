@@ -22,7 +22,6 @@ export const Companies = () => {
     >
       <AnimatedHeading isInView={isInView} text=" Featured Web3 Companies" />
 
-      {/* Card Container */}
       <Flex
         backdropFilter="blur(10px)"
         backgroundColor="rgba(255,255,255,.08)"

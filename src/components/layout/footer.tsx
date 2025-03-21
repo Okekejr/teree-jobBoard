@@ -1,14 +1,12 @@
 import { Box, Flex, HStack, Heading } from "@chakra-ui/react";
 import { Copyright } from "./copyright";
-import { SocialLinks } from "@/constants";
+import { SocialLinks, email } from "@/constants";
 import { Socials } from "../ui/socials";
 import { CustomText } from "../ui/customText";
 import Link from "next/link";
 import { routes } from "@/utils/routes";
 import { useRouter } from "next/router";
 import { useEmail } from "@/hooks/email";
-
-const email = "dylanokeks@yahoo.com";
 
 export const Footer = () => {
   const { pathname } = useRouter();
@@ -111,7 +109,9 @@ export const Footer = () => {
                 transition: "color 0.3s ease-in-out",
               }}
             >
-              OKEKEJR
+              <a href="https://www.okekedev.com" target="_blank">
+                OKEKEJR
+              </a>
             </Box>
           </CustomText>
         </Flex>

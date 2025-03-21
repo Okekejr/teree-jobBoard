@@ -13,3 +13,10 @@ export const Jobs: IRoute = {
   url: "/jobs",
   isExternal: false,
 };
+
+export const AboutLink: IRoute = {
+  id: "about-link-nav",
+  title: "About",
+  url: "/about",
+  isExternal: false,
+};

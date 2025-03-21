@@ -11,6 +11,8 @@ import { FaLinkedin, FaGithub, FaBehanceSquare } from "react-icons/fa";
 
 export const API_URL = "http://127.0.0.1:8000";
 
+export const email = "dylanokeks@yahoo.com";
+
 export type Companies_dbT = {
   id: string;
   name: string;

@@ -49,7 +49,7 @@ export const WhySection = () => {
           </Box>
 
           <AnimatedBoxButton>
-            <CustomButton text="Explore Jobs" />
+            <CustomButton text="Learn more" />
           </AnimatedBoxButton>
         </Flex>
       </Box>

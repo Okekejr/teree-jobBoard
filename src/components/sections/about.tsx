@@ -48,7 +48,7 @@ export const AboutSection = () => {
         </Box>
 
         <AnimatedBoxButton>
-          <CustomButton text="Explore Jobs" />
+          <CustomButton text="Learn more" />
         </AnimatedBoxButton>
       </Flex>
     </Box>

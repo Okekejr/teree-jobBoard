@@ -6,6 +6,8 @@ import { PolyhedraLogo } from "@/components/icons/polyhedra";
 import { Sorella } from "@/components/icons/sorella";
 import { IconProps } from "@chakra-ui/react";
 import { FC } from "react";
+import { IconType } from "react-icons";
+import { FaLinkedin, FaGithub, FaBehanceSquare } from "react-icons/fa";
 
 export const API_URL = "http://127.0.0.1:8000";
 
@@ -52,5 +54,29 @@ export const companies_db: Companies_dbT = [
     name: "Ox",
     desc: "0x is an open protocol that enables peer-to-peer trading of assets.",
     icon: OxLogo,
+  },
+];
+
+export type SocialLinksT = {
+  name: string;
+  link: string;
+  icon: IconType;
+}[];
+
+export const SocialLinks: SocialLinksT = [
+  {
+    name: "Github",
+    link: "https://github.com/Okekejr",
+    icon: FaGithub,
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/emmanuel-okeke/",
+    icon: FaLinkedin,
+  },
+  {
+    name: "Behance",
+    link: "https://www.behance.net/chukwuebukaokeke",
+    icon: FaBehanceSquare,
   },
 ];

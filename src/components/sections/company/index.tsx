@@ -17,6 +17,7 @@ export const Companies = () => {
       display="flex"
       flexDirection="column"
       gap={6}
+      px={{ base: 6, md: 0 }}
       pt={{ base: 8, md: 24 }}
       pb={{ sm: 8, base: 20, md: 24 }}
     >
@@ -30,7 +31,11 @@ export const Companies = () => {
         w="full"
       >
         {/* Grid Layout for Companies */}
-        <Grid templateColumns="repeat(3, 1fr)" gap={0} w="full">
+        <Grid
+          templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+          gap={0}
+          w="full"
+        >
           {companies_db.map((company) => (
             <CompanyCard key={company.id} {...company} isInView={isInView} />
           ))}

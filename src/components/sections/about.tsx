@@ -19,8 +19,11 @@ export const AboutSection = () => {
       flexDirection="column"
       justifyContent="center"
       w="fit-content"
-      h="85vh"
+      h={{ base: "auto", md: "85vh" }}
+      pt={{ base: 8, md: 24 }}
+      pb={{ sm: 8, base: 20, md: 24 }}
       gap={6}
+      px={{ base: 6, md: 0 }}
       zIndex={1}
     >
       <AnimatedHeading isInView={isInView} text="Empowering Your Web3 Career" />
@@ -31,8 +34,8 @@ export const AboutSection = () => {
           maxW="600px"
           color="gray.200"
           bgColor="transparent"
-          width="35rem"
-          textAlign={{ base: "center", md: "left" }}
+          width={{ base: "auto", md: "35rem" }}
+          textAlign="left"
           border="1px solid"
           borderColor="#c7c7c7"
         >

@@ -21,11 +21,12 @@ export const CompanyCard = ({
     <Box
       position="relative"
       w="100%"
-      h="350px"
+      h={{ base: "400px", md: "500px" }}
       display="flex"
       flexDirection="column"
       alignItems="flex-start"
       justifyContent="space-between"
+      border="0.5px solid #718096"
       p={4}
     >
       <motion.div

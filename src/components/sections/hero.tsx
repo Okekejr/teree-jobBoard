@@ -40,16 +40,20 @@ export const Hero = () => {
         w="100%"
         maxW="1200px"
       >
-        <Flex w="100%">
+        <Flex
+          flexDirection={{ base: "column", md: "row" }}
+          w="100%"
+          gap={{ base: 6, md: 0 }}
+        >
           {/* Heading */}
           <MotionHeading
-            fontSize={{ base: "3xl", md: "4.5rem" }}
+            fontSize={{ base: "3rem", md: "4.5rem" }}
             fontWeight="bold"
+            textAlign={{ base: "center", md: "left" }}
             color="white"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            textAlign="left"
           >
             Your Gateway to Blockchain
           </MotionHeading>
@@ -58,7 +62,7 @@ export const Hero = () => {
             mt="auto"
             p={4}
             bgColor="transparent"
-            width="35rem"
+            width={{ base: "auto", md: "35rem" }}
             textAlign={{ base: "center", md: "left" }}
             border="1px solid"
             borderColor="#c7c7c7"
@@ -79,6 +83,7 @@ export const Hero = () => {
         {/* Action Button */}
         <MotionBox
           mt={4}
+          alignSelf={{ base: "center", md: 'flex-start' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}

@@ -11,7 +11,7 @@ export const WhySection = () => {
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
   return (
-    <Flex justifyContent="flex-end" w="full">
+    <Flex justifyContent={{ md: "flex-end" }} w="full">
       <Box
         ref={ref}
         id="why"
@@ -21,9 +21,12 @@ export const WhySection = () => {
         justifyContent="center"
         w="fit-content"
         h="85vh"
+        px={{ base: 6, md: 0 }}
+        pt={{ base: 8, md: 24 }}
+        pb={{ sm: 8, base: 20, md: 24 }}
         gap={6}
         zIndex={1}
-        ml="auto"
+        ml={{ base: 0, md: "auto" }}
       >
         <AnimatedHeading isInView={isInView} text="Why Choose TreeJobs?" />
 
@@ -33,8 +36,8 @@ export const WhySection = () => {
             maxW="600px"
             color="gray.200"
             bgColor="transparent"
-            width="35rem"
-            textAlign={{ base: "center", md: "left" }}
+            width={{ base: "auto", md: "35rem" }}
+            textAlign="left"
             border="1px solid"
             borderColor="#c7c7c7"
           >

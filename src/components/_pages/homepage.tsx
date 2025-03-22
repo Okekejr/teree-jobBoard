@@ -15,7 +15,7 @@ import * as THREE from "three";
 const Homepage = () => {
   const orbRef = useRef<THREE.Group>(null);
 
-  const x = useControls("Terminal", {
+  const x = useControls("Orb", {
     positionX: {
       value: 2.5,
       min: -10,

@@ -33,7 +33,7 @@ export const Navbar = () => {
         alignItems="center"
         maxW="5xl"
         w="100%"
-        px={{ base: 6, lg: 0 }}
+        px={{ base: 6, xl: 0 }}
         zIndex={1}
       >
         <Flex flex="1 1" justifyContent="flex-start">

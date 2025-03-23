@@ -6,7 +6,7 @@ interface SizesProps {
 
 export const calculateSizes = ({ isSmall, isMobile, isTablet }: SizesProps) => {
   return {
-    cubePosition: isSmall
+    orbPosition: isSmall
       ? [4, -5, 0]
       : isMobile
       ? [5, -5, 0]

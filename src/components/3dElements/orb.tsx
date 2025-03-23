@@ -53,7 +53,6 @@ const Orb = forwardRef((props, ref) => {
         start: "top center",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
       },
     });
 
@@ -68,7 +67,6 @@ const Orb = forwardRef((props, ref) => {
         start: "top center",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
         onLeave: () => {
           materials.Orb_material.opacity = 0;
         },
@@ -87,7 +85,6 @@ const Orb = forwardRef((props, ref) => {
         start: "top bottom",
         end: "top center",
         scrub: true,
-        markers: true,
         onEnterBack: () => {
           materials.Orb_material.opacity = 0;
         },

@@ -20,10 +20,10 @@ export const WhySection = () => {
         flexDirection="column"
         justifyContent="center"
         w="fit-content"
-        h="85vh"
-        px={{ base: 6, md: 0 }}
+        h={{ xl: "85vh" }}
+        px={{ base: 6, xl: 0 }}
         pt={{ base: 8, md: 24 }}
-        pb={{ sm: 8, base: 20, md: 24 }}
+        pb={{ sm: 8, base: 20, xl: 24 }}
         gap={6}
         zIndex={1}
         ml={{ base: 0, md: "auto" }}

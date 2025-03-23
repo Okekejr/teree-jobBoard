@@ -8,6 +8,7 @@ import { IconProps } from "@chakra-ui/react";
 import { FC } from "react";
 import { IconType } from "react-icons";
 import { FaLinkedin, FaGithub, FaBehanceSquare } from "react-icons/fa";
+import { FaLink } from "react-icons/fa6";
 
 export const API_URL = "http://127.0.0.1:8000";
 
@@ -67,6 +68,11 @@ export type SocialLinksT = {
 
 export const SocialLinks: SocialLinksT = [
   {
+    name: "Website",
+    link: "https://www.okekedev.com",
+    icon: FaLink,
+  },
+  {
     name: "Github",
     link: "https://github.com/Okekejr",
     icon: FaGithub,
@@ -80,5 +86,28 @@ export const SocialLinks: SocialLinksT = [
     name: "Behance",
     link: "https://www.behance.net/chukwuebukaokeke",
     icon: FaBehanceSquare,
+  },
+];
+
+export type MisionT = {
+  id: string;
+  mission: string;
+}[];
+
+export const Mission: MisionT = [
+  {
+    id: "01",
+    mission:
+      "Empower professionals by providing access to top Web3 job opportunities.",
+  },
+  {
+    id: "02",
+    mission:
+      "Support blockchain companies in finding the right talent to grow their projects.",
+  },
+  {
+    id: "03",
+    mission:
+      "Fuel innovation by helping passionate individuals contribute to the decentralized revolution.",
   },
 ];

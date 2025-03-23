@@ -27,7 +27,7 @@ export const Hero = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      h="100vh"
+      h={{ md: "60vh", xl: "100vh" }}
       p={6}
       zIndex={1}
     >
@@ -41,7 +41,7 @@ export const Hero = () => {
         maxW="1200px"
       >
         <Flex
-          flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "column", lg: "row" }}
           w="100%"
           gap={{ base: 6, md: 0 }}
         >
@@ -83,7 +83,7 @@ export const Hero = () => {
         {/* Action Button */}
         <MotionBox
           mt={4}
-          alignSelf={{ base: "center", md: 'flex-start' }}
+          alignSelf={{ base: "center", md: "flex-start" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}

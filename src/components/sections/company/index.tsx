@@ -17,7 +17,7 @@ export const Companies = () => {
       display="flex"
       flexDirection="column"
       gap={6}
-      px={{ base: 6, md: 0 }}
+      px={{ base: 6, xl: 0 }}
       pt={{ base: 8, md: 24 }}
       pb={{ sm: 8, base: 20, md: 24 }}
     >

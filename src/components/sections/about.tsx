@@ -19,11 +19,11 @@ export const AboutSection = () => {
       flexDirection="column"
       justifyContent="center"
       w="fit-content"
-      h={{ base: "auto", md: "85vh" }}
+      h={{ base: "auto", xl: "85vh" }}
       pt={{ base: 8, md: 24 }}
-      pb={{ sm: 8, base: 20, md: 24 }}
+      pb={{ sm: 8, base: 20, xl: 24 }}
       gap={6}
-      px={{ base: 6, md: 0 }}
+      px={{ base: 6, xl: 0 }}
       zIndex={1}
     >
       <AnimatedHeading isInView={isInView} text="Empowering Your Web3 Career" />

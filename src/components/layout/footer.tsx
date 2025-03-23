@@ -20,11 +20,21 @@ export const Footer = () => {
       justifyContent="center"
       w="100%"
       pt={{ base: 8, md: 24 }}
-      pb={{ sm: 8, base: 20, md: 24 }}
+      pb={8}
+      px={{ base: 8, xl: 0 }}
       zIndex={1}
     >
-      <Flex flexDirection="column" textAlign="center" gap={6} mx="auto" mb={24}>
-        <CustomText fontFamily="body" fontSize={{ md: "1.5rem" }}>
+      <Flex
+        flexDirection="column"
+        textAlign="center"
+        gap={6}
+        mx="auto"
+        mb={{ base: 12, md: 24 }}
+      >
+        <CustomText
+          fontFamily="body"
+          fontSize={{ base: "1.5rem", md: "1.5rem" }}
+        >
           GET IN TOUCH AT
         </CustomText>
 
@@ -37,7 +47,12 @@ export const Footer = () => {
           onClick={handleEmailClick}
         >
           <Heading
-            fontSize={{ md: "5rem" }}
+            fontSize={{
+              sm: "1.3rem",
+              base: "1.85rem",
+              md: "3.8rem",
+              lg: "5rem",
+            }}
             color="transparent"
             sx={{
               WebkitTextStroke: "1px #90CDF4",
@@ -51,11 +66,10 @@ export const Footer = () => {
 
       <Flex
         w="100%"
-        marginTop={["1.5rem", "0"]}
         justifyContent="space-between"
         alignItems="center"
-        flexDir={{ base: "column-reverse", md: "row" }}
-        gap={{ base: "4", md: 0 }}
+        flexDir={{ base: "column", md: "row" }}
+        gap={{ base: 8, md: 0 }}
       >
         <HStack spacing={4}>
           {routes.map((rout) => {
@@ -86,7 +100,7 @@ export const Footer = () => {
         </HStack>
       </Flex>
 
-      <Flex mt={10} pt={10} pb={10} borderTop="1px solid" borderColor="#fff">
+      <Flex mt={10} py={10} borderTop="1px solid" borderColor="#fff">
         <Flex
           w="100%"
           marginTop={["1.5rem", "0"]}

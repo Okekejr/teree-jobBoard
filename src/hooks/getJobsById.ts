@@ -2,7 +2,7 @@ import { JobsType } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchJobById = async (jobId: string) => {
-  const res = await fetch(`/api/jobsApi/getJobsById${jobId}`);
+  const res = await fetch(`/api/jobsApi/getJobsById?id=${jobId}`);
   if (!res.ok) throw new Error("Job not found");
   return res.json();
 };

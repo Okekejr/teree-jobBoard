@@ -10,7 +10,7 @@ import { IconType } from "react-icons";
 import { FaLinkedin, FaGithub, FaBehanceSquare } from "react-icons/fa";
 import { FaLink } from "react-icons/fa6";
 
-export const API_URL = "http://127.0.0.1:8000";
+export const API_URL = "https://teree-job-board.vercel.app/";
 
 export const email = "dylanokeks@yahoo.com";
 

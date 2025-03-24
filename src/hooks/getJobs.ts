@@ -1,4 +1,3 @@
-import { API_URL } from "@/constants";
 import { JobsType } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 
@@ -15,7 +14,7 @@ const fetchJobs = async ({
   ).toString();
 
   // Fetch jobs from API
-  const res = await fetch(`${API_URL}/jobs?${queryParams}`);
+  const res = await fetch(`/api/jobsApi/getJobs?${queryParams}`);
   if (!res.ok) throw new Error("Failed to fetch jobs");
   return res.json();
 };
@@ -25,7 +24,7 @@ export const useGetJobs = (
   initialData?: JobsType[]
 ) => {
   return useQuery({
-    queryKey: ["jobs", filters],
+    queryKey: ["jobss", filters],
     queryFn: fetchJobs,
     staleTime: 3600000,
     refetchOnWindowFocus: false,

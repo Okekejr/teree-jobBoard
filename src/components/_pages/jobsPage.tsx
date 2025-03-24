@@ -3,6 +3,7 @@ import { JobsType } from "@/types";
 import {
   Box,
   Flex,
+  Grid,
   Heading,
   Input,
   InputGroup,
@@ -17,7 +18,6 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { AnimatedBoxButton } from "../ui/animatedBox";
 import { CustomButton } from "../ui/customButton";
-import { ListGrid } from "../ui/listGrid";
 
 interface JobsPageType {
   data: JobsType[] | undefined;
@@ -118,7 +118,13 @@ const JobsPage: FC<JobsPageType> = ({
 
         {error && <CustomText>Error loading jobs: {error.message}</CustomText>}
 
-        <ListGrid>
+        <Grid
+          gap={4}
+          gridTemplateColumns={{
+            base: "1fr",
+            md: "1fr 1fr",
+          }}
+        >
           {displayedJobs.length > 0
             ? displayedJobs.map((job, i) => {
                 return (
@@ -133,7 +139,7 @@ const JobsPage: FC<JobsPageType> = ({
                 );
               })
             : !isLoading && <CustomText>No Jobs available</CustomText>}
-        </ListGrid>
+        </Grid>
 
         <Flex justify="center" mt={{ base: 6, md: 12 }}>
           {searchQuery.length === 0 && visibleJobs < filteredJobs.length && (

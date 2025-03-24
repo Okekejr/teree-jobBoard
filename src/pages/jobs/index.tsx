@@ -30,7 +30,7 @@ const Jobs: NextPage<JobT> = ({ initialData }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const res = await fetch(`${API_URL}/jobs`);
+    const res = await fetch("/api/jobsApi/getJobs");
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }

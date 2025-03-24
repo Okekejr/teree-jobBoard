@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.params as { id: string };
 
   try {
-    const res = await fetch(`${API_URL}/jobs/${id}`);
+    const res = await fetch(`/api/jobsApi/getJobsById${id}`);
 
     const initialData = await res.json();
 

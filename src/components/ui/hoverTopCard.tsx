@@ -54,7 +54,7 @@ export const HoverTopCard: FC<CardProps> = ({
         <Flex alignItems="center" gap="4px">
           <Text
             fontFamily="lighter"
-            fontSize="lg"
+            fontSize={{ base: "md", md: "lg" }}
             fontWeight="bold"
             color={color}
           >

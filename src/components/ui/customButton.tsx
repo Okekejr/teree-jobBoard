@@ -18,6 +18,7 @@ interface CustomButtonProps
     | "mt"
     | "colorScheme"
     | "_hover"
+    | "onClick"
   > {
   text: string;
 }

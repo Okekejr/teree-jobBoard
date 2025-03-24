@@ -2,7 +2,6 @@ import { FC, useEffect, useRef, useState } from "react";
 import { JobsType } from "@/types";
 import {
   Box,
-  Button,
   Flex,
   Heading,
   Input,
@@ -17,6 +16,8 @@ import { ListGrid } from "../ui/listGrid";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import { AnimatedBoxButton } from "../ui/animatedBox";
+import { CustomButton } from "../ui/customButton";
 
 interface JobsPageType {
   data: JobsType[] | undefined;
@@ -107,9 +108,7 @@ const JobsPage: FC<JobsPageType> = ({
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <Text fontSize="md">
-            {filteredJobs.length
-              ? `${filteredJobs.length} jobs found`
-              : ""}
+            {filteredJobs.length ? `${filteredJobs.length} jobs found` : ""}
           </Text>
         </motion.div>
       </Flex>
@@ -138,15 +137,12 @@ const JobsPage: FC<JobsPageType> = ({
 
         <Flex justify="center" mt={{ base: 6, md: 12 }}>
           {searchQuery.length === 0 && visibleJobs < filteredJobs.length && (
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                borderRadius="full"
-                _hover={{ bgColor: "#FBD38D", color: "#000" }}
+            <AnimatedBoxButton>
+              <CustomButton
+                text="Load more jobs"
                 onClick={() => setVisibleJobs((prev) => prev + 2)}
-              >
-                <Text fontFamily="lighter">Load more jobs</Text>
-              </Button>
-            </motion.div>
+              />
+            </AnimatedBoxButton>
           )}
         </Flex>
       </Box>

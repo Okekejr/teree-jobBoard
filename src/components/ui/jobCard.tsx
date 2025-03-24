@@ -21,7 +21,7 @@ export const JobCard: FC<JobCardT> = ({ data }) => {
   return (
     <Flex
       flexDirection="column"
-      width={{ base: "282px", md: "486px" }}
+      width={{ md: "486px" }}
       height={{ base: "240px", md: "250px" }}
       backgroundColor={Card_Bg}
       borderRadius="15px"
@@ -42,7 +42,7 @@ export const JobCard: FC<JobCardT> = ({ data }) => {
         color={Card_Color}
       />
 
-      <Text fontFamily="lighter">• {data.location}</Text>
+      <Text fontFamily="lighter">• {data.location ? data.location : ""}</Text>
 
       <Text
         fontFamily="texts"

@@ -1,7 +1,7 @@
-import { List, ListProps } from "@chakra-ui/react";
+import { List } from "@chakra-ui/react";
 import { FC } from "react";
 
-interface ListGrid extends ListProps {
+interface ListGrid {
   children: React.ReactNode;
 }
 

@@ -12,12 +12,12 @@ import {
 } from "@chakra-ui/react";
 import { JobCard } from "../ui/jobCard";
 import { CustomText } from "../ui/customText";
-import { ListGrid } from "../ui/listGrid";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { AnimatedBoxButton } from "../ui/animatedBox";
 import { CustomButton } from "../ui/customButton";
+import { ListGrid } from "../ui/listGrid";
 
 interface JobsPageType {
   data: JobsType[] | undefined;

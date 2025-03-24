@@ -14,11 +14,17 @@ export const Team = () => {
     <Stack ref={ref} my={4} gap={6}>
       <CustomHeader text="Meet the Team" />
 
-      <CustomText fontFamily="body">
-        TreeJobs was created by a group of Web3 builders, engineers, and
-        designers who understand the struggles of finding high-quality
-        blockchain jobs, hence ME :)
-      </CustomText>
+      <Flex flexDirection="column" gap={6} mb={4} zIndex={1}>
+        <CustomText fontFamily="body">
+          TreeJobs was created by a team of experienced Web3 builders,
+          engineers, and designers who deeply understand the struggles of
+          finding high-quality blockchain jobs…
+        </CustomText>
+
+        <CustomText fontFamily="body">
+          …which is a fancy way of saying it’s just me :)
+        </CustomText>
+      </Flex>
 
       <motion.div
         initial={{ opacity: 0 }}

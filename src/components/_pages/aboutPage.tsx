@@ -12,10 +12,11 @@ const AboutPage = () => {
       pb={{ sm: 8, base: 20, md: 24 }}
       px={{ base: 6, xl: 0 }}
       gap={6}
+      zIndex={1}
     >
       <CustomHeader text="What is TreeJobs?" />
 
-      <Flex flexDirection="column" gap={6} mb={4}>
+      <Flex flexDirection="column" gap={6} mb={4} zIndex={1}>
         <CustomText fontFamily="body">
           TreeJobs is a specialized job board dedicated to connecting top talent
           with the most exciting blockchain and Web3 companies. We bridge the
@@ -33,7 +34,7 @@ const AboutPage = () => {
 
       <CustomHeader text="Our Mission" />
 
-      <Flex flexDirection="column" gap={6} mb={4}>
+      <Flex flexDirection="column" gap={6} mb={4} zIndex={1}>
         <CustomText fontFamily="body">
           We believe that Web3 careers should be accessible, transparent, and
           rewarding. Our mission is to:

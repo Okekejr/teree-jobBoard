@@ -4,7 +4,6 @@ import { Hero } from "../sections/hero";
 import { WhySection } from "../sections/why";
 import { Companies } from "../sections/company";
 import { ScrollingText } from "../ui/scrollingText";
-import { Leva, useControls } from "leva";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
 import { CanvasLoader } from "../3dElements/canvasLoader";
@@ -15,48 +14,9 @@ import * as THREE from "three";
 const Homepage = () => {
   const orbRef = useRef<THREE.Group>(null);
 
-  const x = useControls("Orb", {
-    positionX: {
-      value: 2.5,
-      min: -10,
-      max: 10,
-    },
-    positionY: {
-      value: 2.5,
-      min: -10,
-      max: 10,
-    },
-    positionZ: {
-      value: 2.5,
-      min: -10,
-      max: 10,
-    },
-    rotationX: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    rotationY: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    rotationZ: {
-      value: 0,
-      min: -10,
-      max: 10,
-    },
-    scale: {
-      value: 1,
-      min: 1,
-      max: 100,
-    },
-  });
-
   return (
     <Box>
       {/* Background 3D Orb */}
-      <Leva />
 
       <Canvas
         style={{

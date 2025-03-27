@@ -26,7 +26,7 @@ export const AboutSection = () => {
       px={{ base: 6, xl: 0 }}
       zIndex={1}
     >
-      <AnimatedHeading isInView={isInView} text="Empowering Your Web3 Career" />
+      <AnimatedHeading isInView={isInView} text="Who we are!" />
 
       <Flex flexDirection="column">
         <Box

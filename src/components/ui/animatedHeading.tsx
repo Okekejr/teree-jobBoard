@@ -13,7 +13,7 @@ export const AnimatedHeading = ({ isInView, text }: Props) => {
     <MotionHeading
       color="white"
       bg="#1a1d2b"
-      fontSize={{ base: "2rem", md: "2.7rem" }}
+      fontSize={{ base: "1.7rem", md: "2.7rem" }}
       p="10px"
       mb={4}
       w="fit-content"

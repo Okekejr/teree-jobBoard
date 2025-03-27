@@ -27,7 +27,7 @@ export const Hero = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      h={{ md: "60vh", xl: "100vh" }}
+      h={{ base: "80vh", md: "60vh", xl: "100vh" }}
       p={6}
       zIndex={1}
     >

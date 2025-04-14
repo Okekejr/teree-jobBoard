@@ -113,7 +113,7 @@ const JobsPage: FC<JobsPageType> = ({
         </motion.div>
       </Flex>
 
-      <Box display="flex" justifyContent="center" flexDirection="column">
+      <Box display="flex" flexDirection="column">
         {isLoading && <Spinner size="xl" color="#c7c7c7" />}
 
         {error && <CustomText>Error loading jobs: {error.message}</CustomText>}

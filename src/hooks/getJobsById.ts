@@ -7,13 +7,12 @@ const fetchJobById = async (jobId: string) => {
   return res.json();
 };
 
-export const useGetJobsById = (jobId: string, initialData?: JobsType) => {
+export const useGetJobsById = (jobId: string) => {
   return useQuery<JobsType>({
     queryKey: ["jobsId", jobId],
     queryFn: () => fetchJobById(jobId),
     enabled: !!jobId,
     staleTime: 3600000,
     refetchOnWindowFocus: false,
-    initialData,
   });
 };

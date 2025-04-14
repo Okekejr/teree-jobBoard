@@ -20,14 +20,12 @@ const fetchJobs = async ({
 };
 
 export const useGetJobs = (
-  filters: { company?: string; title?: string; location?: string } = {},
-  initialData?: JobsType[]
+  filters: { company?: string; title?: string; location?: string } = {}
 ) => {
   return useQuery({
     queryKey: ["jobss", filters],
     queryFn: fetchJobs,
     staleTime: 3600000,
     refetchOnWindowFocus: false,
-    initialData,
   });
 };

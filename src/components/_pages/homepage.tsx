@@ -10,9 +10,20 @@ import { CanvasLoader } from "../3dElements/canvasLoader";
 import { PerspectiveCamera } from "@react-three/drei";
 import Orb from "../3dElements/orb";
 import * as THREE from "three";
+import { HomePageContent } from "@/types";
 
-const Homepage = () => {
+interface HomePageProps {
+  data: HomePageContent;
+}
+
+const Homepage = ({ data }: HomePageProps) => {
   const orbRef = useRef<THREE.Group>(null);
+
+  const heroData = {
+    heroTitle: data.heroTitle,
+    heroSubTitle: data.heroSubtitle,
+    heroCta: data.heroCtaText,
+  };
 
   return (
     <Box>
@@ -38,7 +49,7 @@ const Homepage = () => {
         </Suspense>
       </Canvas>
 
-      <Hero />
+      <Hero data={heroData} />
       <AboutSection />
       <WhySection />
       <Companies />

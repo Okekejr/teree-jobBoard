@@ -3,17 +3,18 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { CustomButton } from "../ui/customButton";
-import { HeroSection } from "@/types";
+import { heroSection } from "@/types";
 
 const MotionHeading = motion.create(Heading);
 const MotionText = motion.create(Text);
 const MotionBox = motion.create(Box);
 
-interface HeroData {
-  data: HeroSection;
+interface HeroT {
+  data: heroSection;
 }
 
-export const Hero = ({ data }: HeroData) => {
+export const Hero = ({ data }: HeroT) => {
+  const { heroTitle, heroSubtitle, heroCtaText } = data;
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export const Hero = ({ data }: HeroData) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {data.heroTitle}
+            {heroTitle}
           </MotionHeading>
 
           <MotionBox
@@ -80,7 +81,7 @@ export const Hero = ({ data }: HeroData) => {
               fontSize={{ base: "md", md: "1.1rem" }}
               color="gray.400"
             >
-              {data.heroSubTitle}
+              {heroSubtitle}
             </MotionText>
           </MotionBox>
         </Flex>
@@ -93,7 +94,7 @@ export const Hero = ({ data }: HeroData) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
         >
-          <CustomButton text={data.heroCta} colorScheme="blue" />
+          <CustomButton text={heroCtaText} colorScheme="blue" />
         </MotionBox>
       </Flex>
     </Box>

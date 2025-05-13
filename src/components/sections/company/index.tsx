@@ -3,9 +3,14 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CompanyCard } from "./companyCard";
 import { AnimatedHeading } from "@/components/ui/animatedHeading";
-import { companies_db } from "@/constants";
+import { companiesT } from "@/types";
 
-export const Companies = () => {
+interface CompaniesSecT {
+  data: companiesT;
+}
+
+export const Companies = ({ data }: CompaniesSecT) => {
+  const { featuredCompanies, featuredCompaniesHeading } = data;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
@@ -21,7 +26,7 @@ export const Companies = () => {
       pt={{ base: 8, md: 24 }}
       pb={{ sm: 8, base: 20, md: 24 }}
     >
-      <AnimatedHeading isInView={isInView} text=" Featured Web3 Companies" />
+      <AnimatedHeading isInView={isInView} text={featuredCompaniesHeading} />
 
       <Flex
         backdropFilter="blur(10px)"
@@ -36,8 +41,12 @@ export const Companies = () => {
           gap={0}
           w="full"
         >
-          {companies_db.map((company) => (
-            <CompanyCard key={company.id} {...company} isInView={isInView} />
+          {featuredCompanies.map((company) => (
+            <CompanyCard
+              key={company.id_number}
+              {...company}
+              isInView={isInView}
+            />
           ))}
         </Grid>
       </Flex>

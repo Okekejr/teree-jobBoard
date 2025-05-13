@@ -19,10 +19,37 @@ interface HomePageProps {
 const Homepage = ({ data }: HomePageProps) => {
   const orbRef = useRef<THREE.Group>(null);
 
+  const {
+    heroTitle,
+    heroSubtitle,
+    heroCtaText,
+    aboutHeading,
+    aboutContent,
+    whyHeading,
+    whyContent,
+    featuredCompaniesHeading,
+    featuredCompanies,
+  } = data;
+
   const heroData = {
-    heroTitle: data.heroTitle,
-    heroSubTitle: data.heroSubtitle,
-    heroCta: data.heroCtaText,
+    heroTitle,
+    heroSubtitle,
+    heroCtaText,
+  };
+
+  const aboutData = {
+    aboutHeading,
+    aboutContent,
+  };
+
+  const whyData = {
+    whyHeading,
+    whyContent,
+  };
+
+  const companyData = {
+    featuredCompaniesHeading,
+    featuredCompanies,
   };
 
   return (
@@ -50,9 +77,9 @@ const Homepage = ({ data }: HomePageProps) => {
       </Canvas>
 
       <Hero data={heroData} />
-      <AboutSection />
-      <WhySection />
-      <Companies />
+      <AboutSection data={aboutData} />
+      <WhySection data={whyData} />
+      <Companies data={companyData} />
       <ScrollingText
         topText={["YOUR", "GATEWAY", "TO", "BLOCKCHAIN."]}
         bottomText={["TREEJOBS", "TREEJOBS", "TREEJOBS", "TREEJOBS"]}

@@ -17,7 +17,7 @@ export const homePageQuery = `*[_type == "homePage"][0]{
     whyContent,
     featuredCompaniesHeading,
     featuredCompanies[]->{
-      _id,
+      id_number,
       name,
       desc,
       website,

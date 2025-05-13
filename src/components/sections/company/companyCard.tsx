@@ -1,22 +1,21 @@
-import { Box, Flex, IconProps } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FC } from "react";
 
-interface Props {
-  id: string;
+export interface companyT {
+  id_number: string;
   name: string;
   desc: string;
-  icon: FC<IconProps>;
+  iconUrl: string;
   isInView: boolean;
 }
 
 export const CompanyCard = ({
-  id,
+  id_number,
   name,
   desc,
-  icon: Icon,
   isInView,
-}: Props) => {
+  iconUrl,
+}: companyT) => {
   return (
     <Box
       position="relative"
@@ -40,7 +39,7 @@ export const CompanyCard = ({
           fontWeight="bold"
           color="#9b9b9b"
         >
-          {id}
+          {id_number}
         </Box>
       </motion.div>
 
@@ -61,7 +60,7 @@ export const CompanyCard = ({
           transition="filter 0.3s ease-in-out"
           _hover={{ filter: "blur(0px)" }}
         >
-          <Icon width="100%" height="100%" />
+          <Image src={iconUrl} alt={name} width="100%" height="auto" />
         </Box>
       </motion.div>
 

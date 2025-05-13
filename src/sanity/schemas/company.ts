@@ -6,6 +6,11 @@ export default {
   type: "document",
   fields: [
     {
+      name: "id_number",
+      title: "Number",
+      type: "string",
+    },
+    {
       name: "name",
       title: "Company Name",
       type: "string",
@@ -18,9 +23,9 @@ export default {
       validation: (Rule: ValidationRule) => Rule.required(),
     },
     {
-      name: 'website',
-      title: 'Website URL',
-      type: 'url',
+      name: "website",
+      title: "Website URL",
+      type: "url",
     },
     {
       name: "logo",

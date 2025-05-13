@@ -5,8 +5,14 @@ import { AnimatedBoxButton } from "../ui/animatedBox";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedHeading } from "../ui/animatedHeading";
+import { aboutSectionT } from "@/types";
 
-export const AboutSection = () => {
+interface AboutT {
+  data: aboutSectionT;
+}
+
+export const AboutSection = ({ data }: AboutT) => {
+  const { aboutContent, aboutHeading } = data;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
@@ -26,7 +32,7 @@ export const AboutSection = () => {
       px={{ base: 6, xl: 0 }}
       zIndex={1}
     >
-      <AnimatedHeading isInView={isInView} text="Who we are!" />
+      <AnimatedHeading isInView={isInView} text={aboutHeading} />
 
       <Flex flexDirection="column">
         <Box
@@ -39,15 +45,7 @@ export const AboutSection = () => {
           border="1px solid"
           borderColor="#c7c7c7"
         >
-          <CustomText fontFamily="body">
-            TreeJobs aggregates the best Web3 job listings from innovative
-            companies across the globe. We focus on providing roles in growing
-            projects that are shaping the future of blockchain, offering you a
-            chance to work with cutting-edge technology and contribute to the
-            decentralized revolution. Whether you’re looking to break into Web3
-            or take the next step in your career, we’re here to help you make
-            that connection.
-          </CustomText>
+          <CustomText fontFamily="body">{aboutContent}</CustomText>
         </Box>
 
         <AnimatedBoxButton>

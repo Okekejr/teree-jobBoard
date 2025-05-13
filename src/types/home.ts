@@ -8,15 +8,30 @@ export interface HomePageContent {
   whyContent: string;
   featuredCompaniesHeading: string;
   featuredCompanies: {
-    _id: string;
+    id_number: string;
     name: string;
     desc: string;
     iconUrl: string;
   }[];
 }
 
-export interface HeroSection {
+export interface heroSection {
   heroTitle: string;
-  heroSubTitle: string;
-  heroCta: string;
+  heroSubtitle: string;
+  heroCtaText: string;
+}
+
+export interface aboutSectionT {
+  aboutHeading: string;
+  aboutContent: string;
+}
+
+export interface whySectionT {
+  whyHeading: string;
+  whyContent: string;
+}
+
+export interface companiesT {
+  featuredCompaniesHeading: string;
+  featuredCompanies: HomePageContent["featuredCompanies"];
 }

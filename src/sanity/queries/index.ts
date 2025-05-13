@@ -24,3 +24,24 @@ export const homePageQuery = `*[_type == "homePage"][0]{
       "iconUrl": logo.asset->url
     }
   }`;
+
+export const aboutPageQuery = `*[_type == "aboutPage"][0]{
+    introTitle,
+    introContent,
+    missionTitle,
+    missionContent,
+    missions[]->{
+      _id,
+      mission,
+    },
+    missionFooterNote,
+    teamTitle,
+    teamContent,
+    teamFooterNote,
+    Members[]->{
+      _id,
+      name,
+      role,
+      "headshotUrl": headshot.asset->url
+    }
+  }`;

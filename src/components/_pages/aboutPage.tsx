@@ -1,10 +1,34 @@
 import { Box, Flex, ListItem, UnorderedList } from "@chakra-ui/react";
 import { CustomHeader } from "../ui/animatedHeading";
 import { CustomText } from "../ui/customText";
-import { Mission } from "@/constants";
 import { Team } from "../sections/team";
+import { AboutPageContent } from "@/types";
 
-const AboutPage = () => {
+export interface AboutT {
+  data: AboutPageContent;
+}
+
+const AboutPage = ({ data }: AboutT) => {
+  const {
+    introTitle,
+    introContent,
+    missionTitle,
+    missionContent,
+    missionFooterNote,
+    missions,
+    teamContent,
+    teamFooterNote,
+    teamTitle,
+    Members,
+  } = data;
+
+  const teamData = {
+    teamContent,
+    teamFooterNote,
+    teamTitle,
+    Members,
+  };
+
   return (
     <Box
       display="flex"
@@ -14,48 +38,36 @@ const AboutPage = () => {
       gap={6}
       zIndex={1}
     >
-      <CustomHeader text="What is TreeJobs?" />
+      <CustomHeader text={introTitle} />
 
       <Flex flexDirection="column" gap={6} mb={4} zIndex={1}>
-        <CustomText fontFamily="body">
-          TreeJobs is a specialized job board dedicated to connecting top talent
-          with the most exciting blockchain and Web3 companies. We bridge the
-          gap between skilled professionals and forward-thinking startups, DAOs,
-          and enterprises shaping the future of decentralized technology.
-        </CustomText>
-
-        <CustomText fontFamily="body">
-          In a rapidly evolving Web3 landscape, finding the right career
-          opportunity can be overwhelming. That’s why we curate the best roles
-          from the most innovative companies, making it easier for you to land a
-          job that aligns with your skills, interests, and values.
-        </CustomText>
+        {introContent.map((text, i) => {
+          return (
+            <CustomText fontFamily="body" key={i}>
+              {text}
+            </CustomText>
+          );
+        })}
       </Flex>
 
-      <CustomHeader text="Our Mission" />
+      <CustomHeader text={missionTitle} />
 
       <Flex flexDirection="column" gap={6} mb={4} zIndex={1}>
-        <CustomText fontFamily="body">
-          We believe that Web3 careers should be accessible, transparent, and
-          rewarding. Our mission is to:
-        </CustomText>
+        <CustomText fontFamily="body">{missionContent}</CustomText>
 
         <UnorderedList>
-          {Mission.map((mision) => {
+          {missions.map((mision) => {
             return (
-              <ListItem key={mision.id}>
+              <ListItem key={mision._id}>
                 <CustomText fontFamily="body">{mision.mission}</CustomText>
               </ListItem>
             );
           })}
         </UnorderedList>
 
-        <CustomText fontFamily="heading">
-          * We’re not just another job board—we’re a career accelerator for Web3
-          builders.
-        </CustomText>
+        <CustomText fontFamily="heading">{missionFooterNote}</CustomText>
 
-        <Team />
+        <Team data={teamData} />
       </Flex>
     </Box>
   );

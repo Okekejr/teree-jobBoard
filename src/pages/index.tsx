@@ -16,6 +16,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const companyData: HomePageContent =
     await getClient(true).fetch(homePageQuery);
 
+  if (!companyData) {
+    console.warn("❌ Sanity returned null for homePageQuery");
+    return {
+      notFound: true, // Return 404 if no content
+    };
+  }
+
   return {
     props: {
       data: companyData,

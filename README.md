@@ -6,7 +6,7 @@ TreeJobs is a modern, visually striking Web3 job board focused on showcasing car
 
 ## 🚀 Live Demo
 
-[https://treejobs.vercel.app](https://treejobs.vercel.app) <!-- Replace with actual link -->
+[https://treejobs.vercel.app](https://teree-job-board.vercel.app) <!-- Replace with actual link -->
 
 ---
 

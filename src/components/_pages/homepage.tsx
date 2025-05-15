@@ -10,9 +10,47 @@ import { CanvasLoader } from "../3dElements/canvasLoader";
 import { PerspectiveCamera } from "@react-three/drei";
 import Orb from "../3dElements/orb";
 import * as THREE from "three";
+import { HomePageContent } from "@/types";
 
-const Homepage = () => {
+interface HomePageProps {
+  data: HomePageContent;
+}
+
+const Homepage = ({ data }: HomePageProps) => {
   const orbRef = useRef<THREE.Group>(null);
+
+  const {
+    heroTitle,
+    heroSubtitle,
+    heroCtaText,
+    aboutHeading,
+    aboutContent,
+    whyHeading,
+    whyContent,
+    featuredCompaniesHeading,
+    featuredCompanies,
+  } = data;
+
+  const heroData = {
+    heroTitle,
+    heroSubtitle,
+    heroCtaText,
+  };
+
+  const aboutData = {
+    aboutHeading,
+    aboutContent,
+  };
+
+  const whyData = {
+    whyHeading,
+    whyContent,
+  };
+
+  const companyData = {
+    featuredCompaniesHeading,
+    featuredCompanies,
+  };
 
   return (
     <Box>
@@ -38,10 +76,10 @@ const Homepage = () => {
         </Suspense>
       </Canvas>
 
-      <Hero />
-      <AboutSection />
-      <WhySection />
-      <Companies />
+      <Hero data={heroData} />
+      <AboutSection data={aboutData} />
+      <WhySection data={whyData} />
+      <Companies data={companyData} />
       <ScrollingText
         topText={["YOUR", "GATEWAY", "TO", "BLOCKCHAIN."]}
         bottomText={["TREEJOBS", "TREEJOBS", "TREEJOBS", "TREEJOBS"]}

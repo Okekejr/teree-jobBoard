@@ -5,8 +5,14 @@ import { AnimatedBoxButton } from "../ui/animatedBox";
 import { AnimatedHeading } from "../ui/animatedHeading";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { whySectionT } from "@/types";
 
-export const WhySection = () => {
+interface WhyT {
+  data: whySectionT;
+}
+
+export const WhySection = ({ data }: WhyT) => {
+  const { whyContent, whyHeading } = data;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
 
@@ -28,7 +34,7 @@ export const WhySection = () => {
         zIndex={1}
         ml={{ base: 0, md: "auto" }}
       >
-        <AnimatedHeading isInView={isInView} text="Why Choose TreeJobs?" />
+        <AnimatedHeading isInView={isInView} text={whyHeading} />
 
         <Flex flexDirection="column">
           <Box
@@ -41,14 +47,7 @@ export const WhySection = () => {
             border="1px solid"
             borderColor="#c7c7c7"
           >
-            <CustomText fontFamily="body">
-              In a rapidly evolving Web3 landscape, finding the right
-              opportunity can be overwhelming. TreeJobs simplifies the search by
-              curating top blockchain jobs from the best startups and companies,
-              ensuring you connect with teams that align with your skills,
-              values, and career goals. Whether you’re a developer, designer, or
-              marketer, TreeJobs helps you grow your future in Web3.
-            </CustomText>
+            <CustomText fontFamily="body">{whyContent}</CustomText>
           </Box>
 
           <AnimatedBoxButton>

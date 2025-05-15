@@ -3,12 +3,18 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { CustomButton } from "../ui/customButton";
+import { heroSection } from "@/types";
 
 const MotionHeading = motion.create(Heading);
 const MotionText = motion.create(Text);
 const MotionBox = motion.create(Box);
 
-export const Hero = () => {
+interface HeroT {
+  data: heroSection;
+}
+
+export const Hero = ({ data }: HeroT) => {
+  const { heroTitle, heroSubtitle, heroCtaText } = data;
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -55,7 +61,7 @@ export const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            Your Gateway to Blockchain
+            {heroTitle}
           </MotionHeading>
 
           <MotionBox
@@ -75,7 +81,7 @@ export const Hero = () => {
               fontSize={{ base: "md", md: "1.1rem" }}
               color="gray.400"
             >
-              Explore top Web3 jobs and grow your blockchain career today.
+              {heroSubtitle}
             </MotionText>
           </MotionBox>
         </Flex>
@@ -88,7 +94,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
         >
-          <CustomButton text="Get Started" colorScheme="blue" />
+          <CustomButton text={heroCtaText} colorScheme="blue" />
         </MotionBox>
       </Flex>
     </Box>
